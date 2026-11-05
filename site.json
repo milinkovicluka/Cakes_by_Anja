@@ -1,8 +1,9 @@
 {
-  "name": "Tolkien Fan Club",
-  "lang": "en",
+  "name": "Cakes by Anja",
+  "lang": "sl",
   "nav": [
-    { "label": "Home", "url": "/" },
-    { "label": "Contact", "url": "/contact" }
+    { "label": "Domov", "url": "/" },
+    { "label": "Torte", "url": "/torte" },
+    { "label": "Kontakt", "url": "/kontakt" }
   ]
 }
