@@ -1,6 +1,6 @@
 # Torte
 
-Tukaj boš našla izbor Anjinih tort. Ta seznam je začasen, pozneje ga zamenjava z resničnimi tortami.
+Tukaj je izbor Anjinih tort. Vsako torto lahko prilagodimo vašim željam.
 
 ## Čokoladna torta
 
