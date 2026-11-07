@@ -4,13 +4,44 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{{ Title }} | {{ SiteName }}</title>
+    <meta name="description" content="{{ site.description }}" />
+    <meta name="theme-color" content="#c2386b" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="sl_SI" />
+    <meta property="og:site_name" content="{{ SiteName }}" />
+    <meta property="og:title" content="{{ Title }} | {{ SiteName }}" />
+    <meta property="og:description" content="{{ site.description }}" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link href="/index.css" rel="stylesheet" />
   </head>
 
   <body>
-    <header>
-      <nav>{{ Nav }}</nav>
+    <header class="site-header">
+      <div class="header-row">
+        <a class="brand" href="/">{{ SiteName }}</a>
+        <a class="btn btn-order" href="/kontakt#narocilo">Naroči torto</a>
+      </div>
+      <nav class="site-nav" aria-label="Glavni meni">{{ Nav }}</nav>
     </header>
-    <article>{{ Content }}</article>
+
+    <main>
+      <article>{{ Content }}</article>
+    </main>
+
+    <footer class="site-footer">
+      <p class="footer-brand">{{ SiteName }}</p>
+      <p>{{ site.tagline }} · {{ site.location }}</p>
+      <p class="footer-links">
+        <a href="tel:{{ site.phone }}">{{ site.phone_display }}</a>
+        <a href="mailto:{{ site.email }}">{{ site.email }}</a>
+        <a href="https://instagram.com/{{ site.instagram }}" rel="noopener">Instagram</a>
+      </p>
+    </footer>
+
+    <nav class="mobile-bar" aria-label="Hitri kontakt">
+      <a href="tel:{{ site.phone }}">Pokliči</a>
+      <a href="https://wa.me/{{ site.whatsapp }}" rel="noopener">WhatsApp</a>
+      <a class="mobile-bar-order" href="/kontakt#narocilo">Naroči</a>
+    </nav>
   </body>
 </html>

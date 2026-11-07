@@ -1,9 +1,20 @@
 {
   "name": "Cakes by Anja",
   "lang": "sl",
+  "description": "Domače torte po naročilu za rojstne dneve, poroke in vse priložnosti. Pečeno s svežimi sestavinami in prilagojeno vašim željam.",
+  "tagline": "Domače torte, pečene z ljubeznijo",
+  "phone": "+38600000000",
+  "phone_display": "000 000 000",
+  "whatsapp": "38600000000",
+  "email": "anja@example.com",
+  "instagram": "cakesbyanja",
+  "location": "Ljubljana z okolico",
+  "web3forms_key": "VSTAVI-SVOJ-KLJUC",
   "nav": [
     { "label": "Domov", "url": "/" },
     { "label": "Torte", "url": "/torte" },
+    { "label": "Ponudba", "url": "/ponudba" },
+    { "label": "O meni", "url": "/o-meni" },
     { "label": "Kontakt", "url": "/kontakt" }
   ]
 }

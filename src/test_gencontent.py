@@ -51,6 +51,28 @@ class TestRenderPage(unittest.TestCase):
         self.assertIn("<nav></nav>", page)
 
 
+    def test_site_values_in_template_and_content(self):
+        config = {**self.CONFIG, "phone": "+386 1 234"}
+        template = "<p>{{ site.phone }}</p>{{ Content }}"
+        page = render_page(template, "T", "<a href=\"tel:{{ site.phone }}\">x</a>", "/", config)
+        self.assertEqual(page, '<p>+386 1 234</p><a href="tel:+386 1 234">x</a>')
+
+    def test_site_values_are_escaped(self):
+        page = render_page("{{ site.name }}", "T", "", "/", {"name": "A & B"})
+        self.assertEqual(page, "A &amp; B")
+
+    def test_unknown_site_value_raises(self):
+        with self.assertRaises(ValueError):
+            render_page("{{ site.nope }}", "T", "", "/", self.CONFIG)
+
+    def test_current_page_marked_in_nav(self):
+        nav = [{"label": "Domov", "url": "/"}, {"label": "Torte", "url": "/torte"}]
+        out = build_nav(nav, "/torte")
+        self.assertIn('<a href="/torte" aria-current="page">Torte</a>', out)
+        self.assertIn('<a href="/">Domov</a>', out)
+        self.assertIn('aria-current="page">Domov', build_nav(nav, "/"))
+
+
 class TestConfig(unittest.TestCase):
     def test_empty_nav(self):
         self.assertEqual(build_nav([]), "")
