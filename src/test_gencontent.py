@@ -1,6 +1,18 @@
 import unittest
 
-from gencontent import build_nav, extract_title, load_config, render_page
+import os
+import tempfile
+
+from gencontent import (
+    build_nav,
+    build_robots,
+    build_sitemap,
+    extract_title,
+    find_page_urls,
+    load_config,
+    page_url,
+    render_page,
+)
 
 
 class TestExtractTitle(unittest.TestCase):
@@ -71,6 +83,37 @@ class TestRenderPage(unittest.TestCase):
         self.assertIn('<a href="/torte" aria-current="page">Torte</a>', out)
         self.assertIn('<a href="/">Domov</a>', out)
         self.assertIn('aria-current="page">Domov', build_nav(nav, "/"))
+
+
+class TestSitemap(unittest.TestCase):
+    SITE = "https://x.github.io/repo"
+
+    def test_page_url(self):
+        self.assertEqual(page_url(self.SITE, "/"), "https://x.github.io/repo/")
+        self.assertEqual(page_url(self.SITE + "/", "/torte"), "https://x.github.io/repo/torte/")
+        self.assertEqual(page_url("", "/torte"), "")
+
+    def test_find_page_urls(self):
+        with tempfile.TemporaryDirectory() as d:
+            for sub in ["", "torte", "o-meni", "prazna"]:
+                os.makedirs(os.path.join(d, sub), exist_ok=True)
+                if sub != "prazna":
+                    open(os.path.join(d, sub, "index.md"), "w").close()
+            self.assertEqual(find_page_urls(d), ["/", "/o-meni", "/torte"])
+
+    def test_build_sitemap(self):
+        xml = build_sitemap(self.SITE, ["/", "/torte"])
+        self.assertIn("<loc>https://x.github.io/repo/</loc>", xml)
+        self.assertIn("<loc>https://x.github.io/repo/torte/</loc>", xml)
+        self.assertTrue(xml.startswith('<?xml version="1.0"'))
+
+    def test_build_robots(self):
+        self.assertIn("Sitemap: https://x.github.io/repo/sitemap.xml", build_robots(self.SITE))
+
+    def test_page_url_placeholder(self):
+        config = {**TestRenderPage.CONFIG, "url": self.SITE}
+        page = render_page("{{ PageUrl }}", "T", "", "/", config, "/torte")
+        self.assertEqual(page, "https://x.github.io/repo/torte/")
 
 
 class TestConfig(unittest.TestCase):

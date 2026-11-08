@@ -12,10 +12,10 @@ Večina obiskovalcev bo na **telefonu** – vsako spremembo preveri tudi pri ši
 
 - `content/**/index.md` → vsaka mapa je ena stran. Strani: `/` (Domov), `/torte`, `/ponudba`,
   `/o-meni`, `/kontakt`. Vsaka `.md` **mora** imeti naslov `# ...` (sicer `no h1 header found`).
-- `site.json` → `name`, `lang`, `description`, `tagline`, kontakt (`phone`, `phone_display`,
+- `site.json` → `name`, `lang`, `url` (polni naslov, brez `/` na koncu), `description`, `tagline`, kontakt (`phone`, `phone_display`,
   `whatsapp`, `email`, `instagram`, `location`), `web3forms_key` in `nav`.
 - `template.html` → oznake `{{ Title }}`, `{{ SiteName }}`, `{{ Lang }}`, `{{ Nav }}`, `{{ Content }}`
-  in poljubne `{{ site.kljuc }}`. Vsebuje glavo (znamka, gumb »Naroči torto«, meni), nogo
+  `{{ PageUrl }}` (polni URL strani) in poljubne `{{ site.kljuc }}`. Vsebuje glavo (znamka, gumb »Naroči torto«, meni), nogo
   s kontaktom in spodnjo vrstico za telefon (Pokliči · WhatsApp · Naroči).
 - `static/` → `index.css`, `favicon.svg`, `images/`; skopira se v izhodno mapo kot je.
 - `src/` → generator in testi `test_*.py` (unittest).
@@ -25,6 +25,8 @@ Večina obiskovalcev bo na **telefonu** – vsako spremembo preveri tudi pri ši
 - `{{ site.kljuc }}` se zamenja v predlogi **in v vsebini** z (escapano) vrednostjo iz `site.json`.
   Neznan ključ → `ValueError: unknown site value`. Kontaktne podatke nikoli ne piši ročno v vsebino,
   vedno prek `{{ site.* }}`.
+- `sitemap.xml` in `robots.txt` se ustvarita iz map z `index.md` in `site.json` → `url`
+  (`generate_sitemap`; brez `url` se preskočita). Head ima canonical, og:url, og:image.
 - Meni: trenutna stran dobi `aria-current="page"` (URL iz poti mape, npr. `/torte`).
 - **HTML bloki:** blok, ki se začne z `<` + črka/`!`/`/`, gre na stran nespremenjen (`RawNode`).
   Znotraj HTML bloka **ni praznih vrstic** (prazna vrstica konča blok) in Markdown se ne obdela.
@@ -53,7 +55,9 @@ Večina obiskovalcev bo na **telefonu** – vsako spremembo preveri tudi pri ši
 - `.hero` (domača stran: slika + `.hero-text`), `.features` > `.feature`, `.cta` (poziv k naročilu).
 - `.gallery` > `figure.card` > `img` + `figcaption` (`<strong>` ime, `<span>` cena) + `<p>` + `<a>`.
 - `.about` (slika + besedilo), `.contact-buttons`, `form.order-form` (`id="narocilo"`), `.form-row`.
-- Barve so spremenljivke na `:root` (`--accent` #c2386b, `--accent-soft`, `--bg` ...). Nove dodaj tja.
+- Barve so spremenljivke na `:root` (`--accent` #c2386b, `--accent-dark`, `--accent-soft`, `--bg` ...). Nove dodaj tja.
+- Kontrast besedila mora biti ≥ 4.5 : 1 (WCAG AA). Na `--accent-soft` piši z `--accent-dark`, ne z `--accent`;
+  bel napis gre na `--accent`, `--whatsapp` (#167c41) in `--viber` (#6550e6).
 - CSS je mobile-first: osnovna pravila za telefon, `@media (min-width: 560px)` in `(min-width: 860px)`.
   Polja obrazca imajo `font-size` ≥ 16px (iPhone sicer povečuje), gumbi ≥ 46px visoki.
 
@@ -67,7 +71,9 @@ Ključ si mora uporabnik ustvariti sam na web3forms.com.
 
 Vzorčne slike so SVG v `static/images/` (naslovna, rojstnodnevna, cokoladna, jagodna, otroska,
 porocna, cupcakes, anja). Prave fotografije: `.webp`/`.jpg`, do ~1600 px, pod 300 KB, razmerje
-4:3 za torte; zamenjaj `src` v vsebini in posodobi `width`/`height`.
+4:3 za torte; zamenjaj `src` v vsebini in posodobi `width`/`height`. Za več velikosti `srcset`
+(generator ga **ne** popravlja za basepath). Slika za deljenje: `static/images/deljenje.png` 1200×630
+(iz `deljenje.svg`, upodobljeno z `qlmanage` na kvadratno platno + `sips -c 630 1200`).
 
 ## Objava
 
@@ -78,4 +84,5 @@ https://milinkovicluka.github.io/Cakes_by_Anja/ . Pri lastni domeni: `static/CNA
 
 - Vsi kontaktni podatki, cene, okusi in besedilo »O meni« so vzorčni.
 - `web3forms_key` je `VSTAVI-SVOJ-KLJUC` → obrazec še ne pošilja.
-- Manjka slika za deljenje (`og:image`, PNG/JPG z absolutnim URL-jem).
+- Lighthouse lokalno ne gre (ni Node/Chrome); uporabi pagespeed.web.dev na objavljeni strani.
+- `robots.txt` deluje šele z lastno domeno (GitHub project pages niso koren domene).

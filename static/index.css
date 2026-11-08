@@ -4,13 +4,14 @@
   --bg: #fff8f0;
   --surface: #ffffff;
   --text: #4a3b3b;
-  --muted: #8a6f6f;
+  --muted: #765b5b;
   --accent: #c2386b;
   --accent-dark: #9e2b55;
   --accent-soft: #f9dde6;
   --border: #f0d6dd;
-  --whatsapp: #25d366;
-  --viber: #7360f2;
+  /* temnejši odtenki, da ima bel napis kontrast vsaj 4.5 : 1 (WCAG AA) */
+  --whatsapp: #167c41;
+  --viber: #6550e6;
   --radius: 14px;
   --shadow: 0 6px 20px rgba(74, 59, 59, 0.08);
   --mobile-bar-height: 60px;
@@ -191,7 +192,7 @@ pre code {
 
 .btn-ghost:hover {
   background: var(--accent-soft);
-  color: var(--accent);
+  color: var(--accent-dark);
   border-color: var(--accent);
 }
 
@@ -481,7 +482,7 @@ pre code {
   .site-nav a {
     flex: 0 0 auto;
     background: var(--accent-soft);
-    color: var(--accent);
+    color: var(--accent-dark);
     padding: 6px 16px;
     border: 0;
     border-radius: 999px;

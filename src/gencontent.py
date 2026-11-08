@@ -5,7 +5,7 @@ import re
 
 from block_markdown import markdown_to_html_node
 
-DEFAULT_CONFIG = {"name": "", "lang": "en", "nav": []}
+DEFAULT_CONFIG = {"name": "", "lang": "en", "nav": [], "url": ""}
 
 
 def load_config(path):
@@ -48,6 +48,54 @@ def fill_site_values(text, config):
     return SITE_PLACEHOLDER.sub(replace, text)
 
 
+def page_url(site_url, url):
+    """Polni naslov strani, npr. https://x.github.io/repo + /torte -> .../repo/torte/"""
+    if not site_url:
+        return ""
+    path = url.strip("/")
+    return site_url.rstrip("/") + "/" + (path + "/" if path else "")
+
+
+def find_page_urls(dir_path_content, url="/"):
+    """Vrne URL-je vseh strani (map z index.md), urejene po abecedi."""
+    urls = []
+    for filename in sorted(os.listdir(dir_path_content)):
+        path = os.path.join(dir_path_content, filename)
+        if filename == "index.md":
+            urls.append(url)
+        elif os.path.isdir(path):
+            urls.extend(find_page_urls(path, url.rstrip("/") + "/" + filename))
+    return urls
+
+
+def build_sitemap(site_url, urls):
+    entries = "".join(
+        f"  <url><loc>{html.escape(page_url(site_url, u))}</loc></url>\n" for u in urls
+    )
+    return (
+        '<?xml version="1.0" encoding="UTF-8"?>\n'
+        '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
+        f"{entries}</urlset>\n"
+    )
+
+
+def build_robots(site_url):
+    return f"User-agent: *\nAllow: /\n\nSitemap: {page_url(site_url, '/')}sitemap.xml\n"
+
+
+def generate_sitemap(dir_path_content, dest_dir_path, config):
+    """Zapiše sitemap.xml in robots.txt; brez "url" v site.json ne naredi ničesar."""
+    site_url = config.get("url", "")
+    if not site_url:
+        print("No url in site.json, skipping sitemap.xml and robots.txt")
+        return
+    urls = find_page_urls(dir_path_content)
+    with open(os.path.join(dest_dir_path, "sitemap.xml"), "w", encoding="utf-8") as f:
+        f.write(build_sitemap(site_url, urls))
+    with open(os.path.join(dest_dir_path, "robots.txt"), "w", encoding="utf-8") as f:
+        f.write(build_robots(site_url))
+
+
 def render_page(template, title, content, basepath="/", config=None, current_url=None):
     config = {**DEFAULT_CONFIG, **(config or {})}
     page = (
@@ -55,6 +103,7 @@ def render_page(template, title, content, basepath="/", config=None, current_url
         .replace("{{ SiteName }}", html.escape(config["name"]))
         .replace("{{ Lang }}", html.escape(config["lang"]))
         .replace("{{ Nav }}", build_nav(config["nav"], current_url))
+        .replace("{{ PageUrl }}", html.escape(page_url(config["url"], current_url or "/")))
         .replace("{{ Content }}", content)
     )
     page = fill_site_values(page, config)

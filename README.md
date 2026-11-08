@@ -31,6 +31,8 @@ Skripte delujejo na Linuxu, macOS in Windows (Git Bash).
 | `site.json` | ime, opis, kontaktni podatki, ključ za obrazec in meni |
 | `template.html` | glava z menijem in gumbom »Naroči«, noga, spodnja vrstica za telefon |
 | `static/` | `index.css`, `favicon.svg` in slike v `static/images/` |
+
+Pri gradnji nastaneta še `sitemap.xml` in `robots.txt` (iz map v `content/` in `url` v `site.json`).
 | `src/` | generator in testi |
 
 Strani: Domov, Torte, Ponudba, O meni in Kontakt (z obrazcem za naročilo).
@@ -49,6 +51,7 @@ vsebini jih uporabiš z `{{ site.kljuc }}`, npr. `{{ site.phone_display }}`.
 | `instagram` | `cakesbyanja` | uporabniško ime na Instagramu |
 | `location` | `Ljubljana z okolico` | kraj prevzema |
 | `web3forms_key` | `xxxxxxxx-...` | ključ za obrazec (glej spodaj) |
+| `url` | `https://milinkovicluka.github.io/Cakes_by_Anja` | polni naslov strani: sitemap, kanonični URL, slika za deljenje |
 | `description`, `tagline` | | opis za Google in slogan |
 
 Neznan ključ (npr. tipkarska napaka) ustavi gradnjo z napako, da ne pride na stran.
@@ -68,6 +71,19 @@ Zdaj so na strani vzorčne slike (`static/images/*.svg`). Ko so na voljo prave f
 2. V `content/` zamenjaj ime datoteke v `src="/images/..."`.
 
 Velikosti slik: naslovna 1200 × 700, torte 800 × 600 (razmerje 4 : 3), Anja 600 × 700.
+
+Slika za deljenje na Facebooku/WhatsAppu je `static/images/deljenje.png` (1200 × 630,
+narejena iz `deljenje.svg`). Ko bodo prave fotografije, jo zamenjaj z lepo fotografijo torte.
+
+Prave fotografije pripravi v več velikostih (npr. `torta-800.webp`, `torta-1600.webp`) in
+jih poveži s `srcset`, da telefon prenese manjšo:
+
+```html
+<img src="/images/torta-800.webp" srcset="/images/torta-800.webp 800w, /images/torta-1600.webp 1600w" sizes="(min-width: 860px) 33vw, 100vw" alt="..." width="800" height="600" loading="lazy">
+```
+
+Pretvorba na Macu: `cwebp` (`brew install webp`), nato `cwebp -q 80 -resize 800 0 torta.jpg -o torta-800.webp`.
+Pozor: `srcset` generator ne popravlja za basepath, zato na GitHub Pages piši tam polne poti z `/Cakes_by_Anja/` ali počakaj na lastno domeno.
 
 ## Nova stran
 
@@ -101,10 +117,16 @@ Basepath (`/Cakes_by_Anja/`) se nastavi sam iz imena repozitorija, za
 `uporabnik.github.io` je `/`. Ročni preklic: `BASEPATH="/xyz/" ./build.sh`.
 Pri lastni domeni mora biti basepath `/`.
 
+`robots.txt` velja samo v korenu domene, zato začne delovati šele z lastno domeno.
+Sitemap lahko že zdaj ročno oddaš v [Google Search Console](https://search.google.com/search-console).
+
+Hitrost in dostopnost preveri na [PageSpeed Insights](https://pagespeed.web.dev) po vsaki večji spremembi.
+
 ## Še za narediti
 
 - [ ] Pravi telefon, e-pošta, Instagram in kraj v `site.json`
 - [ ] Ključ Web3Forms v `site.json`
 - [ ] Prave fotografije tort, naslovne slike in Anje
 - [ ] Prave cene in okusi na strani Ponudba, besedilo na strani O meni
-- [ ] Slika za deljenje (Open Graph) in po želji lastna domena
+- [ ] Prave fotografije v WebP s `srcset` in prava slika za deljenje
+- [ ] Lastna domena
