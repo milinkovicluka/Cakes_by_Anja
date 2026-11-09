@@ -42,7 +42,7 @@ Večina obiskovalcev bo na **telefonu** – vsako spremembo preveri tudi pri ši
 - `./main.sh` – gradnja v `public/` + strežnik na http://localhost:8888.
 - Predogled v brskalniku: `.claude/launch.json` konfiguracija `stran` (streže `public/`),
   pred tem `python3 src/main.py "/" ./public`.
-- `./build.sh` – produkcijska gradnja v `docs/` (basepath `/Cakes_by_Anja/`).
+- `./build.sh` – produkcijska gradnja v `docs/` (basepath `/sladka-pika/`).
 
 ## Markdown
 
@@ -81,7 +81,7 @@ porocna, cupcakes, kuhinja). Prave fotografije: `.webp`/`.jpg`, do ~1600 px, pod
 ## Objava
 
 Push na `main` → GitHub Actions: testi, `build.sh`, objava `docs/` na
-https://milinkovicluka.github.io/Cakes_by_Anja/ . Pri lastni domeni: `static/CNAME` in basepath `/`.
+https://milinkovicluka.github.io/sladka-pika/ . Pri lastni domeni: `static/CNAME` in basepath `/`.
 
 ## Odprte stvari
 

@@ -9,7 +9,7 @@ statičnih strani v Pythonu (nastal v okviru tečaja
 na Boot.dev): Markdown datoteke iz `content/` pretvori v HTML strani po predlogi
 `template.html` in jim doda datoteke iz `static/`.
 
-Objavljena stran: https://milinkovicluka.github.io/Cakes_by_Anja/
+Objavljena stran: https://milinkovicluka.github.io/sladka-pika/
 
 ## Zahteve
 
@@ -52,7 +52,7 @@ vsebini jih uporabiš z `{{ site.kljuc }}`, npr. `{{ site.phone_display }}`.
 | `whatsapp` | `38640123456` | WhatsApp in Viber (brez `+` in presledkov) |
 | `email` | `info@example.com` | e-pošta |
 | `location` | `Ljubljana z okolico` | kraj prevzema |
-| `url` | `https://milinkovicluka.github.io/Cakes_by_Anja` | polni naslov strani: sitemap, kanonični URL, slika za deljenje |
+| `url` | `https://milinkovicluka.github.io/sladka-pika` | polni naslov strani: sitemap, kanonični URL, slika za deljenje |
 | `description`, `tagline` | | opis za Google in slogan |
 
 Neznan ključ (npr. tipkarska napaka) ustavi gradnjo z napako, da ne pride na stran.
@@ -85,7 +85,7 @@ jih poveži s `srcset`, da telefon prenese manjšo:
 ```
 
 Pretvorba na Macu: `cwebp` (`brew install webp`), nato `cwebp -q 80 -resize 800 0 torta.jpg -o torta-800.webp`.
-Pozor: `srcset` generator ne popravlja za basepath, zato na GitHub Pages piši tam polne poti z `/Cakes_by_Anja/` ali počakaj na lastno domeno.
+Pozor: `srcset` generator ne popravlja za basepath, zato na GitHub Pages piši tam polne poti z `/sladka-pika/` ali počakaj na lastno domeno.
 
 ## Nova stran
 
@@ -115,7 +115,7 @@ Ob vsakem pushu na `main` GitHub Actions (`.github/workflows/deploy.yml`) požen
 teste, zgradi stran in jo objavi na GitHub Pages. Mapi `docs/` in `public/` nista
 v repozitoriju, ker se ustvarita pri gradnji.
 
-Basepath (`/Cakes_by_Anja/`) se nastavi sam iz imena repozitorija, za
+Basepath (`/sladka-pika/`) se nastavi sam iz imena repozitorija, za
 `uporabnik.github.io` je `/`. Ročni preklic: `BASEPATH="/xyz/" ./build.sh`.
 Pri lastni domeni mora biti basepath `/`.
 
