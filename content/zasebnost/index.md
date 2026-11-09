@@ -1,24 +1,22 @@
 # Politika zasebnosti
 
-<!-- opis: Kako obdelujemo osebne podatke, ki jih pošljete prek spletne strani. -->
-
-To je vzorčno besedilo. Pred objavo ga preberite in prilagodite dejanskemu stanju. Če niste prepričani, se posvetujte s strokovnjakom.
+<!-- opis: Kako obdelujem osebne podatke, ki jih pošljete prek obrazca za naročilo torte. -->
 
 ## Upravljavec podatkov
 
-{{ site.company }}, {{ site.address }}, e-pošta: {{ site.email }}, telefon: {{ site.phone_display }}.
+{{ site.company }}, e-pošta: {{ site.email }}, telefon: {{ site.phone_display }}.
 
-## Katere podatke zbiramo
+## Katere podatke zbiram
 
-Ko izpolnite obrazec za povpraševanje, prejmemo podatke, ki jih vpišete: ime in priimek, telefon, e-pošto in sporočilo. Uporabimo jih samo za odgovor na vaše povpraševanje in za pripravo ponudbe.
+Ko izpolnite obrazec, prejmem podatke, ki jih vpišete: ime in priimek, telefon, e-pošto, datum praznovanja, število kosov in vaše želje. Če mi sporočite alergije, jih uporabim samo za pripravo vaše torte. Podatke uporabim samo za odgovor na povpraševanje in za dogovor o naročilu.
 
-## Kako dolgo jih hranimo
+## Kako dolgo jih hranim
 
-Podatke hranimo, dokler je to potrebno za odgovor in morebitno sodelovanje, nato jih izbrišemo, razen če zakon zahteva daljšo hrambo (npr. računi).
+Podatke hranim, dokler je to potrebno za dogovor in izvedbo naročila, nato jih izbrišem, razen če zakon zahteva daljšo hrambo.
 
 ## Obdelovalci
 
-Obrazec pošilja sporočila prek storitve Web3Forms, ki nam jih posreduje po e-pošti. Stran gostuje pri ponudniku gostovanja, ki lahko beleži tehnične podatke o obisku (npr. naslov IP) za delovanje in varnost.
+Obrazec pošilja sporočila prek storitve Web3Forms, ki mi jih posreduje po e-pošti. Stran gostuje pri ponudniku gostovanja, ki lahko beleži tehnične podatke o obisku (npr. naslov IP) za delovanje in varnost.
 
 ## Piškotki
 

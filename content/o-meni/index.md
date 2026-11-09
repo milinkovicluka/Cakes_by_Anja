@@ -1,13 +1,13 @@
 # O meni
 
-<!-- opis: Spoznajte Anjo, ki peče domače torte po naročilu iz svežih sestavin. -->
+<!-- opis: Domače torte po naročilu iz Gorenjske. Vsako torto spečem doma, posebej za vaše praznovanje. -->
 
 <div class="about">
-  <img src="/images/anja.svg" alt="Anja v svoji kuhinji" width="600" height="700" loading="lazy">
+  <img src="/images/o-meni.webp" alt="Rezina večplastne torte s pistacijami in malino na vrhu" width="600" height="700" loading="lazy">
   <div>
-    <p>Sem Anja in torte pečem, odkar pomnim. Začelo se je v babičini kuhinji, kjer sem kot otrok lizala kremo z žlice, danes pa pečem torte za rojstne dneve, poroke in praznovanja po vsej okolici.</p>
-    <p>Verjamem, da mora torta biti najprej okusna, šele nato lepa. Zato uporabljam sveže, domače sestavine in vsako torto spečem posebej za vas.</p>
-    <p>Najraje imam naročila, kjer skupaj izmisliva nekaj posebnega, kar se ujema z vašim dogodkom.</p>
+    <p>Torte pečem doma, v svoji kuhinji. Ne pečem jih vnaprej in nimam stalne izbire, zato vsaka torta nastane posebej za vaše praznovanje.</p>
+    <p>Okus in okrasitev izberete sami. Lahko mi pošljete fotografijo torte, ki vam je bila všeč, ali pa samo opišete, kaj imate radi, in skupaj izmisliva nekaj za vas.</p>
+    <p>Torte pečem za {{ site.area }}.</p>
   </div>
 </div>
 

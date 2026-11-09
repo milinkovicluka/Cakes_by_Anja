@@ -1,41 +1,25 @@
 # Ponudba
 
-<!-- opis: Okvirne cene tort po velikosti, okusi, dodatki ter kako poteka naročilo in prevzem. -->
+<!-- opis: Cena domače torte po naročilu in kako poteka naročilo. Bohinj, Bled, Lesce, Radovljica in Žirovnica. -->
 
-Okvirne cene in vse, kar morate vedeti pred naročilom. Natančno ceno vam povem, ko se dogovoriva za podrobnosti.
+Pečem samo torte po naročilu. Okus in okrasitev izberete sami, torto pa spečem posebej za vaše praznovanje.
 
-## Velikosti in cene
+## Cena
 
-- **Mala** (do 8 oseb, premer 18 cm): od 35 €
-- **Srednja** (10–14 oseb, premer 22 cm): od 50 €
-- **Velika** (16–20 oseb, premer 26 cm): od 70 €
-- **Nadstropna** (od 30 oseb): po dogovoru, okvirno od 120 €
-- **Cupcakes** (najmanj 12 kosov): od 2,50 € / kos
+- **Torta za 10 kosov:** 60 €
+- **Večja torta:** [DOPOLNI: cena za večje torte ali "po dogovoru"]
 
-## Okusi
+## Okus
 
-- Čokolada
-- Vanilija in jagode
-- Pistacija in malina
-- Karamela in slana karamela
-- Limona in bezeg
-- Gozdni sadeži
+Okus izberete sami. Povejte mi, kaj imate radi, in skupaj ga uskladiva. Če ima kdo od gostov alergijo, mi to sporočite ob naročilu.
 
-## Dodatki
+## Naročilo
 
-- Napis ali ime na torti: brezplačno
-- Fotografija na jedilnem papirju: 5 €
-- Sveže cvetje ali sadje za okras: po dogovoru
-- Prilagoditve za alergije (brez oreščkov, brez laktoze): po dogovoru
-
-## Naročilo in prevzem
-
-- Torte naročite **vsaj 7 dni** pred dogodkom, poročne **vsaj 1 mesec** prej.
-- Naročilo je potrjeno, ko se dogovoriva za vse podrobnosti.
-- Prevzem: {{ site.area }}, po dogovoru.
-- Dostava je mogoča za večje torte, cena po dogovoru.
+- Torto naročite [DOPOLNI: koliko dni prej] pred praznovanjem.
+- Naročilo je potrjeno, ko se dogovoriva za okus, velikost in datum.
+- Torte pečem za {{ site.area }}. Prevzem ali dostava po dogovoru.
 
 <div class="cta">
-  <p><strong>Ste našli, kar iščete?</strong> Pošljite povpraševanje in odgovorim vam v enem dnevu.</p>
+  <p><strong>Ste se odločili?</strong> Pošljite povpraševanje in dogovoriva se za vašo torto.</p>
   <p class="actions"><a class="btn" href="/kontakt#narocilo">Naroči torto</a></p>
 </div>

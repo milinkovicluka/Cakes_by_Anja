@@ -1,16 +1,20 @@
 # Torte
 
-<!-- opis: Rojstnodnevne, otroške, poročne in čokoladne torte ter cupcakes po naročilu. Vsako torto prilagodimo vašim željam. -->
+<!-- opis: Fotografije domačih tort po naročilu za rojstne dneve in praznovanja. Vsako torto pripravim po vaših željah. -->
 
-Tukaj je izbor Anjinih tort. Vsako torto lahko prilagodimo vašim željam – okus, velikost in okrasitev.
+Nekaj tort, ki sem jih spekla za rojstne dneve in praznovanja. Vsaka je nastala po željah naročnika, zato vam lahko pripravim tudi torto po vaši ideji.
 
 <div class="gallery">
-  <figure class="card"><img src="/images/rojstnodnevna.svg" alt="Rojstnodnevna torta" width="800" height="600" loading="lazy"><figcaption><strong>Rojstnodnevna torta</strong><span>od 35 €</span></figcaption><p>Biskvit s kremo po izbiri, okrašen z imenom in številko slavljenca.</p><a href="/kontakt#narocilo">Naroči</a></figure>
-  <figure class="card"><img src="/images/cokoladna.svg" alt="Čokoladna torta" width="800" height="600" loading="lazy"><figcaption><strong>Čokoladna torta</strong><span>od 40 €</span></figcaption><p>Vlažna čokoladna torta s kremo iz temne čokolade.</p><a href="/kontakt#narocilo">Naroči</a></figure>
-  <figure class="card"><img src="/images/jagodna.svg" alt="Jagodna torta" width="800" height="600" loading="lazy"><figcaption><strong>Jagodna torta</strong><span>od 38 €</span></figcaption><p>Lahka biskvitna torta s svežimi jagodami in smetanovo kremo.</p><a href="/kontakt#narocilo">Naroči</a></figure>
-  <figure class="card"><img src="/images/otroska.svg" alt="Otroška torta" width="800" height="600" loading="lazy"><figcaption><strong>Otroška torta</strong><span>od 45 €</span></figcaption><p>Pisana torta z najljubšim junakom ali živaljo vašega otroka.</p><a href="/kontakt#narocilo">Naroči</a></figure>
-  <figure class="card"><img src="/images/porocna.svg" alt="Poročna torta" width="800" height="600" loading="lazy"><figcaption><strong>Poročna torta</strong><span>od 120 €</span></figcaption><p>Večnadstropna torta po naročilu, prilagojena vašemu dnevu.</p><a href="/kontakt#narocilo">Naroči</a></figure>
-  <figure class="card"><img src="/images/cupcakes.svg" alt="Cupcakes" width="800" height="600" loading="lazy"><figcaption><strong>Cupcakes</strong><span>od 2,50 € / kos</span></figcaption><p>Mali kolački s kremo, najmanj 12 kosov. Odlični za zabave in pogostitve.</p><a href="/kontakt#narocilo">Naroči</a></figure>
+  <figure class="card"><img src="/images/torta-cokoladna.webp" alt="Čokoladna torta z izrezanim kosom in sadnim polnilom" width="800" height="600" loading="lazy"><figcaption><strong>Čokoladna torta</strong></figcaption><p>S sadnim polnilom in zvitki iz bele čokolade.</p></figure>
+  <figure class="card"><img src="/images/torta-87.webp" alt="Okrogla vijolična torta s številko 87 in svežimi jagodami ter borovnicami" width="800" height="600" loading="lazy"><figcaption><strong>Za 87. rojstni dan</strong></figcaption><p>Okrašena s svežimi jagodami in borovnicami.</p></figure>
+  <figure class="card"><img src="/images/torta-80.webp" alt="Bela torta s številko 80, okrašena z rožicami" width="800" height="600" loading="lazy"><figcaption><strong>Za 80. rojstni dan</strong></figcaption><p>Nežna bela torta z rožicami.</p></figure>
+  <figure class="card"><img src="/images/torta-30.webp" alt="Pravokotna torta s številko 30, svežim sadjem in čokoladnimi kapljami" width="800" height="600" loading="lazy"><figcaption><strong>Za 30. rojstni dan</strong></figcaption><p>Večja pravokotna torta s svežim sadjem.</p></figure>
+  <figure class="card"><img src="/images/torti-8-6.webp" alt="Dve okrogli torti s številkama 8 in 6" width="800" height="600" loading="lazy"><figcaption><strong>Za otroška rojstna dneva</strong></figcaption><p>Čokoladna in sadna, vsaka po svojem okusu.</p></figure>
+  <figure class="card"><img src="/images/torta-rumena.webp" alt="Rumena torta z venčkom pisanih kremnih rožic" width="800" height="600" loading="lazy"><figcaption><strong>S kremnimi rožicami</strong></figcaption><p>Venček pisanih rožic iz kreme.</p></figure>
+  <figure class="card"><img src="/images/torta-rezina.webp" alt="Rezina večplastne torte s pistacijami in malino na vrhu" width="800" height="600" loading="lazy"><figcaption><strong>Pogled v notranjost</strong></figcaption><p>Več plasti biskvita in kreme.</p></figure>
 </div>
 
-Cene so okvirne in so odvisne od velikosti ter okrasitve. Več v [ponudbi](/ponudba).
+<div class="cta">
+  <p><strong>Vam je katera všeč?</strong> Opišite mi svojo idejo in pripravim torto za vaše praznovanje.</p>
+  <p class="actions"><a class="btn" href="/kontakt#narocilo">Naroči torto</a></p>
+</div>

@@ -1,42 +1,41 @@
-# Domače torte po naročilu – {{ site.area }}
+# Domače torte po naročilu – Bled, Bohinj, Radovljica
 
-<!-- opis: Domače torte po naročilu za rojstne dneve, poroke in praznovanja. Okus, velikost in okrasitev prilagodimo vašemu dogodku. -->
+<!-- opis: Domače torte po naročilu za rojstne dneve in praznovanja. Okus izberete sami. Bohinj, Bled, Lesce, Radovljica in Žirovnica. -->
 
 <section class="hero">
-  <img src="/images/naslovna.svg" alt="Večnadstropna torta s smetanovo kremo" width="1200" height="700">
+  <img src="/images/naslovna.webp" alt="Čokoladna torta z izrezanim kosom, okrašena z belimi čokoladnimi zvitki" width="1200" height="700">
   <div class="hero-text">
     <p class="hero-tagline">{{ site.tagline }}</p>
-    <p>Torte po naročilu za rojstne dneve, poroke, krste in vse druge priložnosti, ko si zaslužite nekaj sladkega.</p>
+    <p>Torta za rojstni dan, obletnico ali družinsko praznovanje, spečena doma in samo za vas. Okus in okrasitev izberete sami.</p>
     <p class="actions"><a class="btn" href="/kontakt#narocilo">Naroči torto</a> <a class="btn btn-ghost" href="/torte">Poglej torte</a></p>
   </div>
 </section>
 
-## Zakaj Anjine torte
+## Zakaj domača torta
 
 <div class="features">
-  <div class="feature"><h3>Pečeno po naročilu</h3><p>Vsako torto spečem posebej za vas, nikoli vnaprej.</p></div>
-  <div class="feature"><h3>Sveže sestavine</h3><p>Domača jajca, prava smetana, maslo in sezonsko sadje.</p></div>
-  <div class="feature"><h3>Po vaših željah</h3><p>Okus, velikost in okrasitev skupaj prilagodimo dogodku.</p></div>
+  <div class="feature"><h3>Spečena samo za vas</h3><p>Vsaka torta nastane po naročilu, nobena ne čaka na polici.</p></div>
+  <div class="feature"><h3>Okus po vaši želji</h3><p>Povejte, kaj imate radi, in torto pripravim po vašem okusu.</p></div>
+  <div class="feature"><h3>Domača peka</h3><p>Torte pečem doma, v svoji kuhinji, z enako skrbnostjo kot za lastno praznovanje.</p></div>
 </div>
 
-## Priljubljene torte
+## Nekaj mojih tort
 
 <div class="gallery">
-  <figure class="card"><img src="/images/rojstnodnevna.svg" alt="Rojstnodnevna torta" width="800" height="600" loading="lazy"><figcaption><strong>Rojstnodnevne</strong><span>od 35 €</span></figcaption></figure>
-  <figure class="card"><img src="/images/porocna.svg" alt="Poročna torta" width="800" height="600" loading="lazy"><figcaption><strong>Poročne</strong><span>od 120 €</span></figcaption></figure>
-  <figure class="card"><img src="/images/cupcakes.svg" alt="Cupcakes" width="800" height="600" loading="lazy"><figcaption><strong>Cupcakes</strong><span>od 2,50 € / kos</span></figcaption></figure>
+  <figure class="card"><img src="/images/torta-87.webp" alt="Okrogla vijolična torta s številko 87 in svežimi jagodami ter borovnicami" width="800" height="600" loading="lazy"><figcaption><strong>Za 87. rojstni dan</strong></figcaption></figure>
+  <figure class="card"><img src="/images/torta-80.webp" alt="Bela torta s številko 80, okrašena z rožicami" width="800" height="600" loading="lazy"><figcaption><strong>Za 80. rojstni dan</strong></figcaption></figure>
+  <figure class="card"><img src="/images/torta-rezina.webp" alt="Rezina večplastne torte s pistacijami in malino na vrhu" width="800" height="600" loading="lazy"><figcaption><strong>Pogled v notranjost</strong></figcaption></figure>
 </div>
 
 [Vse torte >](/torte)
 
 ## Kako naročim
 
-1. Izberite torto ali mi opišite svojo idejo.
-2. Pošljite povpraševanje prek obrazca, pokličite ali pišite na WhatsApp.
-3. Dogovoriva se za okus, velikost, ceno in datum prevzema.
-4. Torto prevzamete svežo na dogovorjeni dan.
+1. Pokličite ali pošljite povpraševanje prek obrazca.
+2. Povejte, za koliko oseb in kakšen okus si želite.
+3. Dogovoriva se za okrasitev, ceno in dan, ko torto dobite.
 
 <div class="cta">
-  <p><strong>Imate dogodek?</strong> Torte naročite vsaj teden dni prej, poročne en mesec prej.</p>
+  <p><strong>Imate kmalu praznovanje?</strong> Pišite mi in dogovoriva se za vašo torto.</p>
   <p class="actions"><a class="btn" href="/kontakt#narocilo">Naroči torto</a> <a class="btn btn-ghost" href="tel:{{ site.phone }}">Pokliči {{ site.phone_display }}</a></p>
 </div>
