@@ -66,7 +66,8 @@ pod `web3forms_key`. Dokler je tam `VSTAVI-SVOJ-KLJUC`, obrazec ne deluje.
 
 ## Slike
 
-Zdaj so na strani vzorčne slike (`static/images/*.svg`). Ko so na voljo prave fotografije:
+Na demo strani so ilustracije v SVG (`static/images/*.svg`): lahke, ostre na vsakem zaslonu in brez avtorskih omejitev.
+Za pravo stranko jih zamenjaš s fotografijami:
 
 1. Shrani jih v `static/images/` (najbolje `.webp` ali `.jpg`, široke do ~1600 px, pod 300 KB).
 2. V `content/` zamenjaj ime datoteke v `src="/images/..."`.
@@ -123,10 +124,10 @@ Sitemap lahko že zdaj ročno oddaš v [Google Search Console](https://search.go
 
 Hitrost in dostopnost preveri na [PageSpeed Insights](https://pagespeed.web.dev) po vsaki večji spremembi.
 
-## Še za narediti
+## Če iz demo strani nastane prava stran
 
-- [ ] Prave fotografije (brezplačne s Pexels/Unsplash) namesto vzorčnih SVG
-- [ ] Prave fotografije tort, naslovne slike in Anje
-- [ ] Prave cene in okusi na strani Ponudba, besedilo na strani O nas
+- [ ] Odstrani demo pasico v `template.html` in `noindex` iz glave
+- [ ] Pravi kontakti v `site.json` in ključ Web3Forms; obrazcu odstrani `data-demo` in demo skripto
 - [ ] Prave fotografije v WebP s `srcset` in prava slika za deljenje
+- [ ] Prave cene, okusi in besedilo O nas
 - [ ] Lastna domena

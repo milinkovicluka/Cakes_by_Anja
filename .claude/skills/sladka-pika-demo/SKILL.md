@@ -72,11 +72,11 @@ Ključ si mora uporabnik ustvariti sam na web3forms.com.
 
 ## Slike
 
-Vzorčne slike so SVG v `static/images/` (naslovna, rojstnodnevna, cokoladna, jagodna, otroska,
+Ilustracije (SVG, brez besedila na sliki) so v `static/images/` (naslovna, rojstnodnevna, cokoladna, jagodna, otroska,
 porocna, cupcakes, kuhinja). Prave fotografije: `.webp`/`.jpg`, do ~1600 px, pod 300 KB, razmerje
 4:3 za torte; zamenjaj `src` v vsebini in posodobi `width`/`height`. Za več velikosti `srcset`
 (generator ga **ne** popravlja za basepath). Slika za deljenje: `static/images/deljenje.png` 1200×630
-(iz `deljenje.svg`, upodobljeno z `qlmanage` na kvadratno platno + `sips -c 630 1200`).
+(iz `deljenje.svg`, upodobljeno s Playwright: zaslonska slika SVG pri 1200×630).
 
 ## Objava
 

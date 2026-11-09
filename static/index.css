@@ -607,7 +607,8 @@ pre code {
   line-height: 1.4;
 }
 
-.demo-banner strong {
+.demo-banner strong,
+.demo-banner a {
   color: #ffffff;
 }
 
