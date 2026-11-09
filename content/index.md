@@ -1,4 +1,4 @@
-# Cakes by Anja
+# Domače torte po naročilu za vaše praznovanje
 
 <section class="hero">
   <img src="/images/naslovna.svg" alt="Večnadstropna torta s smetanovo kremo" width="1200" height="700">
@@ -9,10 +9,10 @@
   </div>
 </section>
 
-## Zakaj Anjine torte
+## Zakaj naše torte
 
 <div class="features">
-  <div class="feature"><h3>Pečeno po naročilu</h3><p>Vsako torto spečem posebej za vas, nikoli vnaprej.</p></div>
+  <div class="feature"><h3>Pečeno po naročilu</h3><p>Vsako torto spečemo posebej za vas, nikoli vnaprej.</p></div>
   <div class="feature"><h3>Sveže sestavine</h3><p>Domača jajca, prava smetana, maslo in sezonsko sadje.</p></div>
   <div class="feature"><h3>Po vaših željah</h3><p>Okus, velikost in okrasitev skupaj prilagodimo dogodku.</p></div>
 </div>
@@ -31,7 +31,7 @@
 
 1. Izberite torto ali mi opišite svojo idejo.
 2. Pošljite povpraševanje prek obrazca, pokličite ali pišite na WhatsApp.
-3. Dogovoriva se za okus, velikost, ceno in datum prevzema.
+3. Skupaj se dogovorimo za okus, velikost, ceno in datum prevzema.
 4. Torto prevzamete svežo na dogovorjeni dan.
 
 <div class="cta">

@@ -1,9 +1,12 @@
 ---
-name: cakes-by-anja
-description: Ključni podatki za gradnjo in urejanje strani Cakes by Anja (statični generator v Pythonu, vsebina v Markdownu + HTML blokih, objava na GitHub Pages, mobilni prikaz). Uporabi pred vsakim dodajanjem ali urejanjem strani, menija, kontaktnih podatkov, slik, obrazca, videza ali generatorja v tem projektu.
+name: sladka-pika-demo
+description: Ključni podatki za gradnjo in urejanje demo strani slaščičarne Sladka Pika (statični generator v Pythonu, vsebina v Markdownu + HTML blokih, objava na GitHub Pages, mobilni prikaz). Uporabi pred vsakim dodajanjem ali urejanjem strani, menija, kontaktnih podatkov, slik, obrazca, videza ali generatorja v tem projektu.
 ---
 
-# Cakes by Anja – kako graditi ta projekt
+# Sladka Pika (demo) – kako graditi ta projekt
+
+**Demo stran izmišljenega podjetja.** Vsi podatki so izmišljeni; pasica »Demo stran« v `template.html`,
+`noindex` in obrazec brez pošiljanja morajo ostati.
 
 Spletna stran za domače torte. Jezik strani in dela z uporabnikom: **slovenščina**.
 Večina obiskovalcev bo na **telefonu** – vsako spremembo preveri tudi pri širini 375 px.
@@ -11,9 +14,9 @@ Večina obiskovalcev bo na **telefonu** – vsako spremembo preveri tudi pri ši
 ## Zgradba
 
 - `content/**/index.md` → vsaka mapa je ena stran. Strani: `/` (Domov), `/torte`, `/ponudba`,
-  `/o-meni`, `/kontakt`. Vsaka `.md` **mora** imeti naslov `# ...` (sicer `no h1 header found`).
+  `/o-nas`, `/kontakt`. Vsaka `.md` **mora** imeti naslov `# ...` (sicer `no h1 header found`).
 - `site.json` → `name`, `lang`, `url` (polni naslov, brez `/` na koncu), `description`, `tagline`, kontakt (`phone`, `phone_display`,
-  `whatsapp`, `email`, `instagram`, `location`), `web3forms_key` in `nav`.
+  `whatsapp`, `email`, `location`) in `nav`.
 - `template.html` → oznake `{{ Title }}`, `{{ SiteName }}`, `{{ Lang }}`, `{{ Nav }}`, `{{ Content }}`
   `{{ PageUrl }}` (polni URL strani) in poljubne `{{ site.kljuc }}`. Vsebuje glavo (znamka, gumb »Naroči torto«, meni), nogo
   s kontaktom in spodnjo vrstico za telefon (Pokliči · WhatsApp · Naroči).
@@ -70,7 +73,7 @@ Ključ si mora uporabnik ustvariti sam na web3forms.com.
 ## Slike
 
 Vzorčne slike so SVG v `static/images/` (naslovna, rojstnodnevna, cokoladna, jagodna, otroska,
-porocna, cupcakes, anja). Prave fotografije: `.webp`/`.jpg`, do ~1600 px, pod 300 KB, razmerje
+porocna, cupcakes, kuhinja). Prave fotografije: `.webp`/`.jpg`, do ~1600 px, pod 300 KB, razmerje
 4:3 za torte; zamenjaj `src` v vsebini in posodobi `width`/`height`. Za več velikosti `srcset`
 (generator ga **ne** popravlja za basepath). Slika za deljenje: `static/images/deljenje.png` 1200×630
 (iz `deljenje.svg`, upodobljeno z `qlmanage` na kvadratno platno + `sips -c 630 1200`).
@@ -82,7 +85,7 @@ https://milinkovicluka.github.io/Cakes_by_Anja/ . Pri lastni domeni: `static/CNA
 
 ## Odprte stvari
 
-- Vsi kontaktni podatki, cene, okusi in besedilo »O meni« so vzorčni.
-- `web3forms_key` je `VSTAVI-SVOJ-KLJUC` → obrazec še ne pošilja.
+- Vsi kontaktni podatki, cene, okusi in besedilo »O nas« so izmišljeni (demo).
+- Obrazec ima `data-demo` in ne pošilja (prikaže demo sporočilo).
 - Lighthouse lokalno ne gre (ni Node/Chrome); uporabi pagespeed.web.dev na objavljeni strani.
 - `robots.txt` deluje šele z lastno domeno (GitHub project pages niso koren domene).

@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{{ Title }} | {{ SiteName }}</title>
     <meta name="description" content="{{ site.description }}" />
+    <!-- Demo stran izmišljenega podjetja: ne sme se pojaviti v Googlu. -->
+    <meta name="robots" content="noindex, nofollow" />
     <meta name="theme-color" content="#c2386b" />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="sl_SI" />
@@ -23,6 +25,7 @@
   </head>
 
   <body>
+    <p class="demo-banner"><strong>Demo stran.</strong> Podjetje Sladka Pika, cene in kontakti so izmišljeni. Izdelava: Luka Milinković.</p>
     <header class="site-header">
       <div class="header-row">
         <a class="brand" href="/">{{ SiteName }}</a>
@@ -41,7 +44,6 @@
       <p class="footer-links">
         <a href="tel:{{ site.phone }}">{{ site.phone_display }}</a>
         <a href="mailto:{{ site.email }}">{{ site.email }}</a>
-        <a href="https://instagram.com/{{ site.instagram }}" rel="noopener">Instagram</a>
       </p>
     </footer>
 

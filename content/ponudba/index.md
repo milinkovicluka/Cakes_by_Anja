@@ -1,6 +1,6 @@
 # Ponudba
 
-Okvirne cene in vse, kar morate vedeti pred naročilom. Natančno ceno vam povem, ko se dogovoriva za podrobnosti.
+Okvirne cene in vse, kar morate vedeti pred naročilom. Natančno ceno vam povemo, ko se dogovorimo za podrobnosti.
 
 ## Velikosti in cene
 
@@ -29,11 +29,11 @@ Okvirne cene in vse, kar morate vedeti pred naročilom. Natančno ceno vam povem
 ## Naročilo in prevzem
 
 - Torte naročite **vsaj 7 dni** pred dogodkom, poročne **vsaj 1 mesec** prej.
-- Naročilo je potrjeno, ko se dogovoriva za vse podrobnosti.
+- Naročilo je potrjeno, ko se dogovorimo za vse podrobnosti.
 - Prevzem: {{ site.location }}, po dogovoru.
 - Dostava je mogoča za večje torte, cena po dogovoru.
 
 <div class="cta">
-  <p><strong>Ste našli, kar iščete?</strong> Pošljite povpraševanje in odgovorim vam v enem dnevu.</p>
+  <p><strong>Ste našli, kar iščete?</strong> Pošljite povpraševanje in odgovorimo vam v enem dnevu.</p>
   <p class="actions"><a class="btn" href="/kontakt#narocilo">Naroči torto</a></p>
 </div>

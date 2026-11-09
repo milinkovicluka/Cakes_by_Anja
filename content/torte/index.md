@@ -1,6 +1,6 @@
 # Torte
 
-Tukaj je izbor Anjinih tort. Vsako torto lahko prilagodimo vašim željam – okus, velikost in okrasitev.
+Tukaj je izbor naših tort. Vsako torto lahko prilagodimo vašim željam – okus, velikost in okrasitev.
 
 <div class="gallery">
   <figure class="card"><img src="/images/rojstnodnevna.svg" alt="Rojstnodnevna torta" width="800" height="600" loading="lazy"><figcaption><strong>Rojstnodnevna torta</strong><span>od 35 €</span></figcaption><p>Biskvit s kremo po izbiri, okrašen z imenom in številko slavljenca.</p><a href="/kontakt#narocilo">Naroči</a></figure>

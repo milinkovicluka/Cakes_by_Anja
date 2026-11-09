@@ -1,23 +1,19 @@
 # Kontakt
 
-Za naročilo torte ali dodatna vprašanja me pokličite, pišite na WhatsApp ali Viber, ali pa izpolnite obrazec spodaj. Odgovorim v enem dnevu.
+Za naročilo torte ali dodatna vprašanja nas pokličite, pišite na WhatsApp ali Viber, ali pa izpolnite obrazec spodaj. Odgovorimo v enem dnevu.
 
 <div class="contact-buttons">
   <a class="btn" href="tel:{{ site.phone }}">Pokliči {{ site.phone_display }}</a>
   <a class="btn btn-whatsapp" href="https://wa.me/{{ site.whatsapp }}?text=Pozdravljeni%2C%20zanima%20me%20torta." rel="noopener">WhatsApp</a>
   <a class="btn btn-viber" href="viber://chat?number=%2B{{ site.whatsapp }}">Viber</a>
   <a class="btn btn-ghost" href="mailto:{{ site.email }}">{{ site.email }}</a>
-  <a class="btn btn-ghost" href="https://instagram.com/{{ site.instagram }}" rel="noopener">Instagram</a>
 </div>
 
 Torte naročite vsaj teden dni pred dogodkom, poročne vsaj mesec prej. Prevzem: {{ site.location }}.
 
 ## Obrazec za naročilo
 
-<form id="narocilo" class="order-form" action="https://api.web3forms.com/submit" method="POST">
-  <input type="hidden" name="access_key" value="{{ site.web3forms_key }}">
-  <input type="hidden" name="subject" value="Novo naročilo s strani {{ site.name }}">
-  <input type="checkbox" name="botcheck" class="hidden" tabindex="-1" autocomplete="off">
+<form id="narocilo" class="order-form" action="#narocilo" method="POST" data-demo>
   <label>Ime in priimek *<input type="text" name="ime" autocomplete="name" required></label>
   <label>Telefon *<input type="tel" name="telefon" autocomplete="tel" inputmode="tel" required></label>
   <label>E-pošta<input type="email" name="email" autocomplete="email"></label>
@@ -28,7 +24,8 @@ Torte naročite vsaj teden dni pred dogodkom, poročne vsaj mesec prej. Prevzem:
   </div>
   <label>Opombe (okus, napis, alergije, ideja ...)<textarea name="opombe" rows="4"></textarea></label>
   <button class="btn" type="submit">Pošlji povpraševanje</button>
-  <p class="form-note">Povpraševanje ni zavezujoče. Naročilo potrdiva skupaj po telefonu ali e-pošti.</p>
+  <p class="form-note">Povpraševanje ni zavezujoče. Naročilo potrdimo skupaj po telefonu ali e-pošti.</p>
+  <p class="form-demo-msg" id="demo-msg" hidden>To je demo: obrazec ne pošilja. Na pravi strani bi povpraševanje prispelo na e-pošto podjetja.</p>
 </form>
 <script>
   (function () {
@@ -36,6 +33,11 @@ Torte naročite vsaj teden dni pred dogodkom, poročne vsaj mesec prej. Prevzem:
     d.setDate(d.getDate() + 7);
     var el = document.getElementById("datum");
     if (el) el.min = d.toISOString().slice(0, 10);
+    var f = document.getElementById("narocilo");
+    if (f) f.addEventListener("submit", function (e) {
+      e.preventDefault();
+      document.getElementById("demo-msg").hidden = false;
+    });
   })();
 </script>
 

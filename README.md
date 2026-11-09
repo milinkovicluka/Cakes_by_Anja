@@ -1,6 +1,9 @@
-# Cakes by Anja
+# Sladka Pika – demo stran slaščičarne
 
-Spletna stran za domače torte **Cakes by Anja**. Zgradi jo preprost generator
+**Demo / referenca.** Podjetje Sladka Pika, cene in kontakti so izmišljeni. Stran je označena
+z demo pasico, ima `noindex` (ne pojavi se v Googlu), obrazec pa ne pošilja (pokaže demo sporočilo).
+
+Spletna stran za domače torte **Sladka Pika**. Zgradi jo preprost generator
 statičnih strani v Pythonu (nastal v okviru tečaja
 [Build a Static Site Generator](https://www.boot.dev/courses/build-static-site-generator-python)
 na Boot.dev): Markdown datoteke iz `content/` pretvori v HTML strani po predlogi
@@ -28,14 +31,14 @@ Skripte delujejo na Linuxu, macOS in Windows (Git Bash).
 | Pot | Vsebina |
 | --- | --- |
 | `content/` | strani v Markdownu; vsaka mapa z `index.md` postane svoja stran |
-| `site.json` | ime, opis, kontaktni podatki, ključ za obrazec in meni |
+| `site.json` | ime, opis, kontaktni podatki in meni |
 | `template.html` | glava z menijem in gumbom »Naroči«, noga, spodnja vrstica za telefon |
 | `static/` | `index.css`, `favicon.svg` in slike v `static/images/` |
 
 Pri gradnji nastaneta še `sitemap.xml` in `robots.txt` (iz map v `content/` in `url` v `site.json`).
 | `src/` | generator in testi |
 
-Strani: Domov, Torte, Ponudba, O meni in Kontakt (z obrazcem za naročilo).
+Strani: Domov, Torte, Ponudba, O nas in Kontakt (z obrazcem za naročilo).
 
 ## Podatki strani (`site.json`)
 
@@ -47,10 +50,8 @@ vsebini jih uporabiš z `{{ site.kljuc }}`, npr. `{{ site.phone_display }}`.
 | `phone` | `+38640123456` | povezave `tel:` (gumb Pokliči) |
 | `phone_display` | `040 123 456` | prikaz številke |
 | `whatsapp` | `38640123456` | WhatsApp in Viber (brez `+` in presledkov) |
-| `email` | `anja@primer.si` | e-pošta |
-| `instagram` | `cakesbyanja` | uporabniško ime na Instagramu |
+| `email` | `info@example.com` | e-pošta |
 | `location` | `Ljubljana z okolico` | kraj prevzema |
-| `web3forms_key` | `xxxxxxxx-...` | ključ za obrazec (glej spodaj) |
 | `url` | `https://milinkovicluka.github.io/Cakes_by_Anja` | polni naslov strani: sitemap, kanonični URL, slika za deljenje |
 | `description`, `tagline` | | opis za Google in slogan |
 
@@ -58,7 +59,7 @@ Neznan ključ (npr. tipkarska napaka) ustavi gradnjo z napako, da ne pride na st
 
 ## Obrazec za naročilo
 
-Obrazec na strani Kontakt pošilja sporočila prek brezplačne storitve
+V demo različici obrazec ne pošilja (`data-demo`, prikaže sporočilo). Za pravo stranko obrazec pošilja prek brezplačne storitve
 [Web3Forms](https://web3forms.com): na njihovi strani vpišeš e-pošto, na katero
 želiš prejemati naročila, dobiš ključ (access key) in ga vpišeš v `site.json`
 pod `web3forms_key`. Dokler je tam `VSTAVI-SVOJ-KLJUC`, obrazec ne deluje.
@@ -70,7 +71,7 @@ Zdaj so na strani vzorčne slike (`static/images/*.svg`). Ko so na voljo prave f
 1. Shrani jih v `static/images/` (najbolje `.webp` ali `.jpg`, široke do ~1600 px, pod 300 KB).
 2. V `content/` zamenjaj ime datoteke v `src="/images/..."`.
 
-Velikosti slik: naslovna 1200 × 700, torte 800 × 600 (razmerje 4 : 3), Anja 600 × 700.
+Velikosti slik: naslovna 1200 × 700, torte 800 × 600 (razmerje 4 : 3), O nas 600 × 700.
 
 Slika za deljenje na Facebooku/WhatsAppu je `static/images/deljenje.png` (1200 × 630,
 narejena iz `deljenje.svg`). Ko bodo prave fotografije, jo zamenjaj z lepo fotografijo torte.
@@ -124,9 +125,8 @@ Hitrost in dostopnost preveri na [PageSpeed Insights](https://pagespeed.web.dev)
 
 ## Še za narediti
 
-- [ ] Pravi telefon, e-pošta, Instagram in kraj v `site.json`
-- [ ] Ključ Web3Forms v `site.json`
+- [ ] Prave fotografije (brezplačne s Pexels/Unsplash) namesto vzorčnih SVG
 - [ ] Prave fotografije tort, naslovne slike in Anje
-- [ ] Prave cene in okusi na strani Ponudba, besedilo na strani O meni
+- [ ] Prave cene in okusi na strani Ponudba, besedilo na strani O nas
 - [ ] Prave fotografije v WebP s `srcset` in prava slika za deljenje
 - [ ] Lastna domena

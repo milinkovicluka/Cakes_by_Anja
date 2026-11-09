@@ -1,21 +1,19 @@
 {
-  "name": "Cakes by Anja",
+  "name": "Sladka Pika",
   "lang": "sl",
   "url": "https://milinkovicluka.github.io/Cakes_by_Anja",
-  "description": "Domače torte po naročilu za rojstne dneve, poroke in vse priložnosti. Pečeno s svežimi sestavinami in prilagojeno vašim željam.",
+  "description": "Demo stran slaščičarne: domače torte po naročilu za rojstne dneve, poroke in vse priložnosti. Podjetje in podatki so izmišljeni.",
   "tagline": "Domače torte, pečene z ljubeznijo",
   "phone": "+38600000000",
   "phone_display": "000 000 000",
   "whatsapp": "38600000000",
-  "email": "anja@example.com",
-  "instagram": "cakesbyanja",
+  "email": "info@example.com",
   "location": "Ljubljana z okolico",
-  "web3forms_key": "VSTAVI-SVOJ-KLJUC",
   "nav": [
     { "label": "Domov", "url": "/" },
     { "label": "Torte", "url": "/torte" },
     { "label": "Ponudba", "url": "/ponudba" },
-    { "label": "O meni", "url": "/o-meni" },
+    { "label": "O nas", "url": "/o-nas" },
     { "label": "Kontakt", "url": "/kontakt" }
   ]
 }
