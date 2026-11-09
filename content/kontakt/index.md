@@ -1,5 +1,7 @@
 # Kontakt
 
+<!-- opis: Naročite torto po telefonu, WhatsAppu, Vibru ali prek obrazca. Odgovor v enem dnevu. -->
+
 Za naročilo torte ali dodatna vprašanja me pokličite, pišite na WhatsApp ali Viber, ali pa izpolnite obrazec spodaj. Odgovorim v enem dnevu.
 
 <div class="contact-buttons">
@@ -10,11 +12,11 @@ Za naročilo torte ali dodatna vprašanja me pokličite, pišite na WhatsApp ali
   <a class="btn btn-ghost" href="https://instagram.com/{{ site.instagram }}" rel="noopener">Instagram</a>
 </div>
 
-Torte naročite vsaj teden dni pred dogodkom, poročne vsaj mesec prej. Prevzem: {{ site.location }}.
+Torte naročite vsaj teden dni pred dogodkom, poročne vsaj mesec prej. Prevzem: {{ site.area }}.
 
 ## Obrazec za naročilo
 
-<form id="narocilo" class="order-form" action="https://api.web3forms.com/submit" method="POST">
+<form id="narocilo" class="contact-form" action="https://api.web3forms.com/submit" method="POST">
   <input type="hidden" name="access_key" value="{{ site.web3forms_key }}">
   <input type="hidden" name="subject" value="Novo naročilo s strani {{ site.name }}">
   <input type="checkbox" name="botcheck" class="hidden" tabindex="-1" autocomplete="off">
@@ -27,8 +29,9 @@ Torte naročite vsaj teden dni pred dogodkom, poročne vsaj mesec prej. Prevzem:
     <label>Število oseb<input type="number" name="osebe" min="1" max="300" inputmode="numeric"></label>
   </div>
   <label>Opombe (okus, napis, alergije, ideja ...)<textarea name="opombe" rows="4"></textarea></label>
+  <label class="consent"><input type="checkbox" name="soglasje" required> Strinjam se z obdelavo podatkov za odgovor na povpraševanje.</label>
   <button class="btn" type="submit">Pošlji povpraševanje</button>
-  <p class="form-note">Povpraševanje ni zavezujoče. Naročilo potrdiva skupaj po telefonu ali e-pošti.</p>
+  <p class="form-note">Povpraševanje ni zavezujoče. Naročilo potrdiva skupaj po telefonu ali e-pošti. Več o podatkih v <a href="/zasebnost">politiki zasebnosti</a>.</p>
 </form>
 <script>
   (function () {

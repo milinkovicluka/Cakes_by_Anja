@@ -1,5 +1,7 @@
 # Torte
 
+<!-- opis: Rojstnodnevne, otroške, poročne in čokoladne torte ter cupcakes po naročilu. Vsako torto prilagodimo vašim željam. -->
+
 Tukaj je izbor Anjinih tort. Vsako torto lahko prilagodimo vašim željam – okus, velikost in okrasitev.
 
 <div class="gallery">

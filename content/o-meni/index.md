@@ -1,5 +1,7 @@
 # O meni
 
+<!-- opis: Spoznajte Anjo, ki peče domače torte po naročilu iz svežih sestavin. -->
+
 <div class="about">
   <img src="/images/anja.svg" alt="Anja v svoji kuhinji" width="600" height="700" loading="lazy">
   <div>

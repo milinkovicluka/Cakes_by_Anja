@@ -1,4 +1,6 @@
-# Cakes by Anja
+# Domače torte po naročilu – {{ site.area }}
+
+<!-- opis: Domače torte po naročilu za rojstne dneve, poroke in praznovanja. Okus, velikost in okrasitev prilagodimo vašemu dogodku. -->
 
 <section class="hero">
   <img src="/images/naslovna.svg" alt="Večnadstropna torta s smetanovo kremo" width="1200" height="700">

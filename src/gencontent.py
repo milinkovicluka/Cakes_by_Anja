@@ -18,6 +18,8 @@ def load_config(path):
 
 
 SITE_PLACEHOLDER = re.compile(r"\{\{ site\.(\w+) \}\}")
+DESCRIPTION_COMMENT = re.compile(r"^<!--\s*opis:\s*(.*?)\s*-->\s*$", re.MULTILINE)
+SRCSET_ATTR = re.compile(r'srcset="([^"]*)"')
 
 
 def _same_page(a, b):
@@ -49,7 +51,7 @@ def fill_site_values(text, config):
 
 
 def page_url(site_url, url):
-    """Polni naslov strani, npr. https://x.github.io/repo + /torte -> .../repo/torte/"""
+    """Polni naslov strani, npr. https://x.github.io/repo + /storitve -> .../repo/storitve/"""
     if not site_url:
         return ""
     path = url.strip("/")
@@ -96,10 +98,32 @@ def generate_sitemap(dir_path_content, dest_dir_path, config):
         f.write(build_robots(site_url))
 
 
-def render_page(template, title, content, basepath="/", config=None, current_url=None):
+def extract_description(markdown):
+    """Opis strani za Google iz vrstice <!-- opis: ... --> (če je ni, vrne None)."""
+    match = DESCRIPTION_COMMENT.search(markdown)
+    return match.group(1) if match else None
+
+
+def fix_srcset(page, basepath):
+    """V srcset doda basepath pred vsak URL, ki se začne z "/"."""
+
+    def replace(match):
+        parts = [p.strip() for p in match.group(1).split(",")]
+        fixed = [basepath + p[1:] if p.startswith("/") else p for p in parts]
+        return 'srcset="' + ", ".join(fixed) + '"'
+
+    return SRCSET_ATTR.sub(replace, page)
+
+
+def render_page(
+    template, title, content, basepath="/", config=None, current_url=None, description=None
+):
     config = {**DEFAULT_CONFIG, **(config or {})}
+    if description is None:
+        description = config.get("description", "")
     page = (
         template.replace("{{ Title }}", html.escape(title))
+        .replace("{{ Description }}", html.escape(description))
         .replace("{{ SiteName }}", html.escape(config["name"]))
         .replace("{{ Lang }}", html.escape(config["lang"]))
         .replace("{{ Nav }}", build_nav(config["nav"], current_url))
@@ -109,6 +133,7 @@ def render_page(template, title, content, basepath="/", config=None, current_url
     page = fill_site_values(page, config)
     page = page.replace('href="/', f'href="{basepath}')
     page = page.replace('src="/', f'src="{basepath}')
+    page = fix_srcset(page, basepath)
     return page
 
 
@@ -131,8 +156,11 @@ def generate_page(
 
     html_content = markdown_to_html_node(markdown).to_html()
     title = extract_title(markdown)
+    description = extract_description(markdown)
 
-    page = render_page(template, title, html_content, basepath, config, current_url)
+    page = render_page(
+        template, title, html_content, basepath, config, current_url, description
+    )
 
     dest_dir = os.path.dirname(dest_path)
     if dest_dir:
